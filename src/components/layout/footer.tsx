@@ -9,6 +9,7 @@ import {
   Globe2,
   ShieldCheck,
 } from "lucide-react";
+import { Logo } from "@/components/ui/logo";
 import { siteConfig, footerNavItems } from "@/config/site";
 
 export function Footer() {
@@ -61,13 +62,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="inline-flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-600 to-slate-900 flex items-center justify-center text-white font-extrabold text-lg">
-                A
-              </div>
-              <span className="font-extrabold text-xl tracking-tight text-slate-900 dark:text-white">
-                ALBERTECH
-              </span>
+            <Link href="/" className="inline-flex items-center">
+              <Logo size="lg" />
             </Link>
             <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-sm">
               ALBERTECH is an international digital agency. We partner with ambitious organizations

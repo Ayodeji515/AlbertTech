@@ -1,1 +1,11 @@
-{"version":4,"routes":{"/blog/architecting-high-performance-enterprise-web-platforms-nextjs":{},"/blog/headless-commerce-international-growth-playbook":{},"/blog/technical-seo-core-web-vitals-business-impact":{},"/blog/business-automation-eliminating-operational-friction":{}},"dynamicRoutes":{"/blog/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/blog/[slug]","routeRegex":"^\\/blog\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"9c59f271970464def78b087211f51d54","previewModeSigningKey":"ca3bb36ba0d519ea2366dd54fd89695c7b38a0365e8e862f739121f436b0b5c9","previewModeEncryptionKey":"573ce01b9952ff5efa7844337b934020038c28139d3b998342610d140a8f0b90"}}
+{
+  "version": 4,
+  "routes": {},
+  "dynamicRoutes": {},
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "ea0d802fd10c73ad05da0416a82a1a64",
+    "previewModeSigningKey": "77ec298d7de7beb881a77be50a2fefc5d366d4e7aa08f796a743b3f0d50c4ba6",
+    "previewModeEncryptionKey": "653167cc6fa3f753070adf6eaf30b9ddbe41a3dc55dacd22f28e53b87dd74780"
+  }
+}

@@ -1,0 +1,24 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="48" height="48" rx="12" fill="url(#bg_grad)" />
+  <path d="M24 6L8 42H17.5L24 25L30.5 42H40L24 6Z" fill="url(#front_grad)" />
+  <path d="M24 6L31 26H17L24 6Z" fill="url(#inner_grad)" />
+  <path d="M15.5 29L32.5 29L29.5 35L18.5 35L15.5 29Z" fill="#60A5FA" fill-opacity="0.95" />
+  <circle cx="24" cy="14" r="2.8" fill="#FFFFFF" />
+  <defs>
+    <linearGradient id="bg_grad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E40AF" />
+      <stop offset="0.5" stop-color="#1D4ED8" />
+      <stop offset="1" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="front_grad" x1="8" y1="6" x2="40" y2="42" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#93C5FD" />
+      <stop offset="0.5" stop-color="#3B82F6" />
+      <stop offset="1" stop-color="#1D4ED8" />
+    </linearGradient>
+    <linearGradient id="inner_grad" x1="17" y1="6" x2="31" y2="26" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" />
+      <stop offset="1" stop-color="#BFDBFE" stop-opacity="0.5" />
+    </linearGradient>
+  </defs>
+</svg>
+
