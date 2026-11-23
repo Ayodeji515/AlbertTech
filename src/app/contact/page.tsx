@@ -36,15 +36,15 @@ export default function ContactPage() {
       </section>
 
       {/* Main Grid: Form + Direct Contact Information */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <section className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           {/* Left Column: Interactive Form */}
-          <div className="lg:col-span-7 p-8 sm:p-10 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
-            <div className="mb-8">
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
+          <div className="lg:col-span-7 p-4 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
+            <div className="mb-6 sm:mb-8">
+              <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
                 Submit Project Brief
               </h2>
-              <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
+              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
                 Fill out the specifications below. Our solutions director will review and reply within 24 hours.
               </p>
             </div>
@@ -55,7 +55,7 @@ export default function ContactPage() {
           {/* Right Column: Direct Channels & Operational Details */}
           <div className="lg:col-span-5 space-y-6">
             {/* WhatsApp Quick Channel */}
-            <div className="p-7 rounded-2xl border border-emerald-200 dark:border-emerald-800/80 bg-emerald-50/50 dark:bg-emerald-950/20 space-y-4">
+            <div className="p-5 sm:p-7 rounded-2xl border border-emerald-300 dark:border-emerald-800 bg-emerald-50/60 dark:bg-emerald-950/20 space-y-4">
               <div className="flex items-center gap-3">
                 <div className="p-2.5 rounded-xl bg-emerald-500 text-white">
                   <MessageCircle className="w-5 h-5" />

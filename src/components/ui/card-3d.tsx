@@ -65,17 +65,7 @@ export function Card3D({
           transformStyle: "preserve-3d",
         }}
       >
-        {/* Specular glare overlay */}
-        {glow && (
-          <div
-            className="absolute inset-0 rounded-2xl pointer-events-none transition-opacity duration-300 z-10"
-            style={{
-              opacity: glarePosition.opacity,
-              background: `radial-gradient(circle at ${glarePosition.x}% ${glarePosition.y}%, rgba(255,255,255,0.7) 0%, rgba(37,99,235,0.15) 30%, transparent 70%)`,
-            }}
-          />
-        )}
-        <div style={{ transform: "translateZ(10px)" }}>{children}</div>
+        <div style={{ transform: "translateZ(8px)" }}>{children}</div>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import {
   Cpu,
   Users,
   Clock,
-  Sparkles,
+  Globe2,
 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
 
@@ -43,7 +43,7 @@ export function ValueProps() {
         "Built-in compliance with global accessibility standards, strict data encryption, and automated CI/CD security audits from day one.",
     },
     {
-      icon: <Sparkles className="w-5 h-5 text-rose-600 dark:text-rose-400" />,
+      icon: <Globe2 className="w-5 h-5 text-rose-600 dark:text-rose-400" />,
       title: "International Audience Readiness",
       description:
         "Designed for global markets with edge caching, multi-currency payment handling, and international SEO hreflang foundations.",

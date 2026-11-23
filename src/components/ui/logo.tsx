@@ -1,5 +1,4 @@
 import * as React from "react";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 interface LogoProps {
@@ -27,52 +26,29 @@ export function Logo({
 
   return (
     <div className={cn("inline-flex items-center gap-2.5 group select-none", className)}>
-      {/* 3D Geometric Logo Mark */}
+      {/* Clean Solid Monogram Emblem (Zero Gradient, Zero Artificial Glare) */}
       <div
         className={cn(
-          "relative flex items-center justify-center rounded-xl overflow-hidden transition-all duration-300 group-hover:scale-105 group-hover:rotate-1 shadow-[0_0_20px_rgba(37,99,235,0.25)]",
+          "relative flex items-center justify-center rounded-xl bg-slate-900 dark:bg-brand-600 text-white font-bold transition-transform duration-200 group-hover:scale-105",
           sizeClasses[size]
         )}
-        style={{
-          background: "linear-gradient(135deg, #2563EB 0%, #1D4ED8 50%, #0F172A 100%)",
-        }}
       >
-        {/* Specular overlay */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-white/20 via-transparent to-transparent opacity-80" />
-        
-        {/* SVG Monogram & Geometric Vertex */}
         <svg
           viewBox="0 0 40 40"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full p-1.5 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]"
+          className="w-full h-full p-1.5"
         >
-          {/* 3D Isometric A Layers */}
+          {/* Solid Architectural Geometric A */}
           <path
-            d="M20 4L7 34H14.5L20 20L25.5 34H33L20 4Z"
-            fill="url(#logo_grad_front)"
+            d="M20 5L7 35H15L20 21L25 35H33L20 5Z"
+            fill="#FFFFFF"
           />
           <path
-            d="M20 4L26 21H14L20 4Z"
-            fill="url(#logo_grad_inner)"
-          />
-          <path
-            d="M13 23L27 23L24.5 28L15.5 28L13 23Z"
+            d="M13 24H27V28H13V24Z"
             fill="#60A5FA"
-            fillOpacity="0.9"
           />
-          <circle cx="20" cy="11" r="2.2" fill="#FFFFFF" />
-          <defs>
-            <linearGradient id="logo_grad_front" x1="7" y1="4" x2="33" y2="34" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#93C5FD" />
-              <stop offset="0.5" stopColor="#3B82F6" />
-              <stop offset="1" stopColor="#1E40AF" />
-            </linearGradient>
-            <linearGradient id="logo_grad_inner" x1="14" y1="4" x2="26" y2="21" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#FFFFFF" stopOpacity="0.95" />
-              <stop offset="1" stopColor="#BFDBFE" stopOpacity="0.4" />
-            </linearGradient>
-          </defs>
+          <circle cx="20" cy="12" r="2.5" fill="#FFFFFF" />
         </svg>
       </div>
 
@@ -88,9 +64,8 @@ export function Logo({
             >
               ALBERTECH
             </span>
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-500 animate-pulse" />
           </div>
-          <span className="text-[9px] sm:text-[10px] tracking-[0.2em] uppercase text-slate-400 dark:text-slate-400 font-bold -mt-0.5 font-mono">
+          <span className="text-[9px] sm:text-[10px] tracking-[0.2em] uppercase text-slate-500 dark:text-slate-400 font-semibold -mt-0.5 font-mono">
             Digital Agency
           </span>
         </div>
@@ -98,4 +73,3 @@ export function Logo({
     </div>
   );
 }
-

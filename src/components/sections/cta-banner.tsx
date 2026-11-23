@@ -14,12 +14,8 @@ export function CTABanner({
   showWhatsApp?: boolean;
 }) {
   return (
-    <section className="py-16 sm:py-24 bg-slate-900 text-white relative overflow-hidden">
-      {/* Subtle lighting accents */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-600/20 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-sky-500/15 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">
+    <section className="py-16 sm:py-24 bg-slate-900 border-t border-slate-800 text-white relative">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center space-y-6">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-brand-500/20 text-brand-300 border border-brand-500/30">
           Start Your Project
         </div>

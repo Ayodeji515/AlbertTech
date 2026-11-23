@@ -14,7 +14,6 @@ import {
   Search,
   Cpu,
   MessageCircle,
-  Sparkles,
 } from "lucide-react";
 import { siteConfig, mainNavItems } from "@/config/site";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -195,9 +194,8 @@ export function Navbar() {
               <MessageCircle className="w-3.5 h-3.5 text-emerald-500" />
               <span>WhatsApp</span>
             </Button>
-            <Button href="/contact" size="sm" variant="primary" className="shadow-md">
-              <Sparkles className="w-3.5 h-3.5 mr-1" />
-              <span>Start Project</span>
+            <Button href="/contact" size="sm" variant="primary">
+              <span>Start a Project</span>
               <ArrowRight className="w-3.5 h-3.5 ml-1" />
             </Button>
           </div>

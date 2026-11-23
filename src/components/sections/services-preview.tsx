@@ -83,7 +83,7 @@ export function ServicesPreview() {
           ))}
 
           {/* Consultation Card */}
-          <div className="rounded-2xl border border-brand-200 dark:border-brand-900/60 bg-gradient-to-br from-brand-50/50 to-brand-100/30 dark:from-brand-950/40 dark:to-slate-900 p-7 flex flex-col justify-between">
+          <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 p-7 flex flex-col justify-between">
             <div className="space-y-4">
               <span className="text-xs font-bold uppercase tracking-wider text-brand-700 dark:text-brand-400">
                 Unsure Where to Begin?

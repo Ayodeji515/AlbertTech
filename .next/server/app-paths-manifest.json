@@ -1,7 +1,9 @@
 {
-  "/icon.svg/route": "app/icon.svg/route.js",
   "/page": "app/page.js",
   "/blog/page": "app/blog/page.js",
   "/blog/[slug]/page": "app/blog/[slug]/page.js",
-  "/contact/page": "app/contact/page.js"
+  "/contact/page": "app/contact/page.js",
+  "/terms/page": "app/terms/page.js",
+  "/privacy-policy/page": "app/privacy-policy/page.js",
+  "/services/automation/page": "app/services/automation/page.js"
 }

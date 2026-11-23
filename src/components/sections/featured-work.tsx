@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowRight, Sparkles, Layers } from "lucide-react";
+import { ArrowRight, Layers } from "lucide-react";
 import { portfolioProjects } from "@/config/portfolio";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -18,17 +18,17 @@ export function FeaturedWork() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-6">
           <div className="max-w-2xl">
             <div className="mb-3.5">
-              <Badge variant="brand">Featured Projects & Carousel</Badge>
+              <Badge variant="brand">Featured Projects</Badge>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
-              Selected Case Studies & 3D Showcases
+              Selected Case Studies & Engineering Showcases
             </h2>
             <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-400">
-              Interactive project showcase engineered with modern decoupled architectures,
-              sub-second performance, and measurable commercial results.
+              Representative digital solutions engineered with modern decoupled architectures,
+              high performance, and verified commercial results.
             </p>
           </div>
-          <Button href="/portfolio" variant="outline" size="md" className="shrink-0 self-start md:self-auto bg-white/70 dark:bg-slate-900/70 backdrop-blur">
+          <Button href="/portfolio" variant="outline" size="md" className="shrink-0 self-start md:self-auto bg-white dark:bg-slate-900">
             <span>View All Case Studies</span>
             <ArrowRight className="w-4 h-4 ml-1.5" />
           </Button>
@@ -39,8 +39,7 @@ export function FeaturedWork() {
           <Carousel autoPlayInterval={6000}>
             {featured.map((project) => (
               <div key={project.id} className="p-1">
-                <Card3D depth={8}>
-                  <div className="rounded-3xl border border-slate-200/80 dark:border-white/10 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl overflow-hidden shadow-xl flex flex-col lg:flex-row gap-8 items-center p-6 sm:p-8">
+                <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm flex flex-col lg:flex-row gap-8 items-center p-6 sm:p-8">
                     {/* Image Column */}
                     <div className="w-full lg:w-1/2 h-64 sm:h-80 rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800 shrink-0 relative group">
                       <img
@@ -105,7 +104,6 @@ export function FeaturedWork() {
                       </div>
                     </div>
                   </div>
-                </Card3D>
               </div>
             ))}
           </Carousel>

@@ -7,7 +7,6 @@ import {
   AlertCircle,
   Loader2,
   MessageCircle,
-  Mail,
   ShieldCheck,
   Building,
 } from "lucide-react";
@@ -61,9 +60,9 @@ export function ContactForm() {
     e.preventDefault();
     setErrorMessage(null);
 
-    // Basic client validation
+    // Client-side validation
     if (!formData.fullName.trim()) {
-      setErrorMessage("Please provide your full name.");
+      setErrorMessage("Please enter your full name.");
       return;
     }
     if (!formData.email.trim() || !formData.email.includes("@")) {
@@ -71,7 +70,7 @@ export function ContactForm() {
       return;
     }
     if (!formData.phone.trim()) {
-      setErrorMessage("Please provide your phone number.");
+      setErrorMessage("Please enter your phone number.");
       return;
     }
     if (formData.projectDescription.trim().length < 15) {
@@ -127,19 +126,19 @@ export function ContactForm() {
   return (
     <div className="w-full">
       {successData ? (
-        <div className="p-8 sm:p-10 rounded-2xl border border-emerald-200 dark:border-emerald-800/80 bg-emerald-50/70 dark:bg-emerald-950/30 text-center space-y-4 animate-in fade-in duration-300">
-          <div className="w-14 h-14 mx-auto rounded-full bg-emerald-100 dark:bg-emerald-900/60 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
-            <CheckCircle2 className="w-8 h-8" />
+        <div className="p-6 sm:p-10 rounded-2xl border border-emerald-300 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-950/40 text-center space-y-4 animate-in fade-in duration-300">
+          <div className="w-12 h-12 mx-auto rounded-full bg-emerald-100 dark:bg-emerald-900/60 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+            <CheckCircle2 className="w-6 h-6" />
           </div>
-          <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
-            Enquiry Received Successfully
+          <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+            Enquiry Received
           </h3>
-          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-lg mx-auto leading-relaxed">
-            Thank you for reaching out to ALBERTECH. Your project parameters have been logged under reference number{" "}
+          <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 max-w-lg mx-auto leading-relaxed">
+            Thank you for reaching out. Your project enquiry has been registered under reference{" "}
             <span className="font-mono font-bold text-emerald-700 dark:text-emerald-300">
               {successData.leadId}
             </span>
-            . Our senior solutions architects review all briefs and respond within 24 business hours.
+            . One of our senior solutions architects will personally review your brief and reply within 24 business hours.
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -148,6 +147,7 @@ export function ContactForm() {
               isExternal
               variant="whatsapp"
               size="md"
+              className="w-full sm:w-auto"
             >
               <MessageCircle className="w-4 h-4 mr-2" />
               Follow up on WhatsApp
@@ -156,19 +156,20 @@ export function ContactForm() {
               variant="outline"
               size="md"
               onClick={() => setSuccessData(null)}
+              className="w-full sm:w-auto"
             >
               Submit Another Inquiry
             </Button>
           </div>
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-5">
           {errorMessage && (
-            <div className="p-4 rounded-xl border border-rose-200 dark:border-rose-900/60 bg-rose-50 dark:bg-rose-950/40 text-rose-800 dark:text-rose-200 text-sm flex items-start gap-3">
-              <AlertCircle className="w-5 h-5 shrink-0 text-rose-500 mt-0.5" />
+            <div className="p-3.5 rounded-xl border border-rose-300 dark:border-rose-900 bg-rose-50 dark:bg-rose-950/40 text-rose-800 dark:text-rose-200 text-xs sm:text-sm flex items-start gap-2.5">
+              <AlertCircle className="w-4 h-4 shrink-0 text-rose-500 mt-0.5" />
               <div>
                 <p className="font-semibold">Unable to submit enquiry</p>
-                <p className="text-xs mt-0.5">{errorMessage}</p>
+                <p className="mt-0.5">{errorMessage}</p>
               </div>
             </div>
           )}
@@ -187,9 +188,9 @@ export function ContactForm() {
             />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
             {/* Full Name */}
-            <div>
+            <div className="w-full">
               <label
                 htmlFor="fullName"
                 className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5"
@@ -203,13 +204,13 @@ export function ContactForm() {
                 required
                 value={formData.fullName}
                 onChange={handleChange}
-                placeholder="e.g. Elena Rostova"
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-colors text-sm"
+                placeholder="Elena Rostova"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-colors text-sm"
               />
             </div>
 
             {/* Email Address */}
-            <div>
+            <div className="w-full">
               <label
                 htmlFor="email"
                 className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5"
@@ -224,33 +225,40 @@ export function ContactForm() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="elena@company.com"
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-colors text-sm"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-colors text-sm"
               />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {/* Country-Aware Phone Number */}
-            <div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+            {/* Mobile-Responsive Phone Number Input (Zero Overlap Guaranteed) */}
+            <div className="w-full">
               <label
                 htmlFor="phone"
                 className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5"
               >
                 Phone Number <span className="text-rose-500">*</span>
               </label>
-              <div className="flex rounded-xl shadow-2xs">
-                <select
-                  name="countryCode"
-                  value={formData.countryCode}
-                  onChange={handleChange}
-                  className="px-2.5 py-2.5 rounded-l-xl border border-r-0 border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-200 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-brand-500/20"
-                >
-                  {siteConfig.countryCodes.map((item) => (
-                    <option key={item.code + item.country} value={item.code}>
-                      {item.code} ({item.country.split("/")[0].trim()})
-                    </option>
-                  ))}
-                </select>
+              <div className="w-full flex items-stretch rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 focus-within:ring-2 focus-within:ring-brand-500/20 focus-within:border-brand-500 overflow-hidden">
+                <div className="shrink-0 bg-slate-100 dark:bg-slate-800 border-r border-slate-300 dark:border-slate-700 flex items-center">
+                  <select
+                    name="countryCode"
+                    aria-label="Country Dial Code"
+                    value={formData.countryCode}
+                    onChange={handleChange}
+                    className="w-20 sm:w-24 px-2 py-2.5 bg-transparent text-slate-800 dark:text-slate-200 text-xs font-semibold focus:outline-none cursor-pointer"
+                  >
+                    {siteConfig.countryCodes.map((item) => (
+                      <option
+                        key={item.code + item.country}
+                        value={item.code}
+                        className="bg-white dark:bg-slate-900 text-slate-900 dark:text-white text-xs"
+                      >
+                        {item.code} ({item.country.split("/")[0].trim()})
+                      </option>
+                    ))}
+                  </select>
+                </div>
                 <input
                   id="phone"
                   name="phone"
@@ -259,37 +267,37 @@ export function ContactForm() {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="555 019 283"
-                  className="flex-1 px-4 py-2.5 rounded-r-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-colors text-sm"
+                  className="flex-1 min-w-0 w-full px-3 sm:px-3.5 py-2.5 bg-transparent text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none text-sm"
                 />
               </div>
             </div>
 
             {/* Company Name */}
-            <div>
+            <div className="w-full">
               <label
                 htmlFor="companyName"
                 className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5"
               >
-                Company / Organization <span className="text-slate-400 font-normal lowercase">(optional)</span>
+                Company <span className="text-slate-400 font-normal lowercase">(optional)</span>
               </label>
-              <div className="relative">
+              <div className="relative w-full">
                 <input
                   id="companyName"
                   name="companyName"
                   type="text"
                   value={formData.companyName}
                   onChange={handleChange}
-                  placeholder="Acme International Ltd"
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-colors text-sm"
+                  placeholder="Acme International"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-colors text-sm"
                 />
-                <Building className="w-4 h-4 text-slate-400 absolute right-3.5 top-3 pointer-events-none" />
+                <Building className="w-4 h-4 text-slate-400 absolute right-3 top-3 pointer-events-none" />
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
             {/* Service Required */}
-            <div>
+            <div className="w-full">
               <label
                 htmlFor="service"
                 className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5"
@@ -301,7 +309,7 @@ export function ContactForm() {
                 name="service"
                 value={formData.service}
                 onChange={handleChange}
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-colors text-sm"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-colors text-sm cursor-pointer"
               >
                 <option value="Website Design & Development">Website Design & Development</option>
                 <option value="E-commerce Solutions">E-commerce Solutions</option>
@@ -313,19 +321,19 @@ export function ContactForm() {
             </div>
 
             {/* Estimated Project Budget */}
-            <div>
+            <div className="w-full">
               <label
                 htmlFor="budget"
                 className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5"
               >
-                Estimated Investment Target <span className="text-slate-400 font-normal lowercase">(optional)</span>
+                Estimated Budget <span className="text-slate-400 font-normal lowercase">(optional)</span>
               </label>
               <select
                 id="budget"
                 name="budget"
                 value={formData.budget}
                 onChange={handleChange}
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-colors text-sm"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-colors text-sm cursor-pointer"
               >
                 {siteConfig.budgetRanges.map((bracket) => (
                   <option key={bracket} value={bracket}>
@@ -337,12 +345,12 @@ export function ContactForm() {
           </div>
 
           {/* Project Description */}
-          <div>
+          <div className="w-full">
             <label
               htmlFor="projectDescription"
               className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5"
             >
-              Project Overview & Objectives <span className="text-rose-500">*</span>
+              Project Overview & Goals <span className="text-rose-500">*</span>
             </label>
             <textarea
               id="projectDescription"
@@ -351,11 +359,11 @@ export function ContactForm() {
               required
               value={formData.projectDescription}
               onChange={handleChange}
-              placeholder="Tell us about your company, current digital challenges, key timelines, and what you aim to accomplish..."
-              className="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-colors text-sm leading-relaxed"
+              placeholder="Tell us about your organization, current challenges, timeline targets, and what you aim to achieve..."
+              className="w-full px-3.5 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-colors text-sm leading-relaxed"
             />
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-              Minimum 15 characters. Be as specific as you like; all submissions are protected under mutual NDA standards.
+              Minimum 15 characters. All project enquiries are kept confidential under mutual non-disclosure standards.
             </p>
           </div>
 
@@ -371,7 +379,7 @@ export function ContactForm() {
               {isSubmitting ? (
                 <>
                   <Loader2 className="w-4 h-4 animate-spin mr-2" />
-                  Processing Enquiry...
+                  Sending Enquiry...
                 </>
               ) : (
                 <>
@@ -382,13 +390,12 @@ export function ContactForm() {
             </Button>
           </div>
 
-          <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-100 dark:border-slate-800">
-            <ShieldCheck className="w-4 h-4 text-emerald-500" />
-            <span>Strict privacy. Your contact details are never shared or sold.</span>
+          <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-200 dark:border-slate-800">
+            <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+            <span>Strict confidentiality. Your contact details are never shared or sold.</span>
           </div>
         </form>
       )}
     </div>
   );
 }
-
