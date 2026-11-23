@@ -1,0 +1,8 @@
+{
+  "/services/automation/page": "app/services/automation/page.js",
+  "/terms/page": "app/terms/page.js",
+  "/portfolio/page": "app/portfolio/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/blog/[slug]/page": "app/blog/[slug]/page.js",
+  "/contact/page": "app/contact/page.js"
+}
